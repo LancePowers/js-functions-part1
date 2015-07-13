@@ -52,9 +52,28 @@ function isDivisible(a,b) {
   // body...
 }
 // Bonus: Write a function called oddNumbers that takes a random integer, from 0 to 100. If the number is greater than 40 then output all the odd integers from 40 to the random number. If the number is less than 40, output all the odd integers from 0 to 40.
+function oddNumbers(rand) {
+  var result = "";
+  if (rand <= 40) {
+    for (var i = 0; i < 40; i++) {
+      if (i % 2 !== 0){
+        result += (i + " ");
+      }
+    }
+  } else if (rand > 40) {
+    for (var i = 40; i < rand; i++) {
+      if (i % 2 !== 0){
+        result += (i + " ");
+      }
+    }
+  }
+  return result;
+}
+
 console.log(sum(5,2));
 console.log(isEqual(1,2));
 console.log(discountPercentage(100,20));
 console.log(stringCapitalize("This is also a sentence"));
 console.log(evenNumbers());
-console.log(isDivisible(2,4));
+console.log(isDivisible(4,4));
+console.log(oddNumbers(Math.random()*100));
